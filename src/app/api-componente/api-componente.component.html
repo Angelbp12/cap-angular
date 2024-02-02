@@ -1,0 +1,59 @@
+<!--<h1 class="centrar">
+    USO DE LA API RICK AND MORTY
+</h1>-->
+
+<h3>
+    USO DE LA API RICK AND MORTY
+    <small class="text-body-secondary">por Angel Briones</small>
+  </h3>
+
+ <!-- <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Dropdown button
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Action</a></li>
+      <li><a class="dropdown-item" href="#">Another action</a></li>
+      <li><a class="dropdown-item" href="#">Something else here</a></li>
+    </ul>
+  </div>
+  -->
+
+        <div class="card" style="width: 18rem; height: auto; display: inline-block; margin:10px 7px;" *ngFor= "let personaje of data">
+            <img  [src]="personaje.image" class="card-img-top" alt="...">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"> {{personaje.name}} </li>
+                <li class="list-group-item">{{editaStatus (personaje.status) }}</li>
+                <li class="list-group-item">{{personaje.gender}}</li>
+            </ul>
+    
+            <div class="card-body">
+                <button type="button" class="btn btn-outline-info" (click)="masinfo(personaje.species)">Mostrar Especie</button>
+            </div>
+        </div>
+
+
+<div class="card" style="width: 18rem; height: auto; display: inline-block; margin:10px 7px;" *ngFor= "let personajes2 of data2">
+
+    <img  [src]="personajes2.image" class="card-img-top" alt="...">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"> {{personajes2.name}} </li>
+            <li class="list-group-item">{{editaStatus (personajes2.status) }}</li>
+            <li class="list-group-item">{{personajes2.gender}}</li>
+        </ul>
+
+        <div class="card-body">
+            <button type="button" class="btn btn-outline-info" (click)="masinfo(personajes2.species)">Mostrar Especie</button>
+        </div>
+</div>          
+
+
+<div class="btn-group" role="group" aria-label="Basic outlined example">
+
+    <button type="button" class="btn btn-outline-primary" (click)="llenarData2()">Mas personajes</button>
+    <button type="button" class="btn btn-outline-primary">Middle</button>
+
+
+</div> 
+
+<button type="button" (click)="editaapi()">api</button>

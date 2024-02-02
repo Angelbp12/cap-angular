@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    
+<h1>TABLA DE CONTENIDO</h1>
+
+<div>
+    <table border="1">
+
+        <tr>
+            <td> Nombre </td>
+            <td> Apellido </td>
+            <td> Edad </td>
+            <td> Genero </td>
+        </tr>
+        <tr>
+            <td> {{nombre}}</td>
+            <td> Perez </td>
+            <td> 20 </td>
+            <td> Masculino </td>
+        </tr>
+        <tr *ngIf="bandera">
+            <td> Angel </td>
+            <td> Briones </td>
+            <td> 21 </td>
+            <td> Masculino </td>
+        </tr>
+    </table>
+</div>
+
+<div>
+    <label for="">
+        Dias de la semana
+    </label>
+    <select [(ngModel)]="diasSelecionado">
+        <option *ngFor="let dia of diasSemana" [value]="dia.diaSolo"> 
+            {{dia.dia}}
+        </option>
+    </select>
+</div>
+
+<h2>{{diasSelecionado}}</h2>
+
+<button type="button" (click)="mostrarArreglo()">Mostrar</button>
+
+<button type="button" (click)="cambiarNombre()">Cambiar</button>
+
+<button type="button" (click)="funcion2()">funcion2</button>
+
+<button class="btn btn-primary">hola</button>
+
+<div>
+ 
+    <label>
+        Ingresa año
+        <input type="number" [(ngModel)]="year">
+    </label>
+    <button (click)="convertir()">Siglos</button>
+</div>
+</body>
+
+</html>
+
+
+
+
+
